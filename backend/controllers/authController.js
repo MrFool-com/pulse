@@ -24,8 +24,9 @@ exports.login = async (req, res) => {
       return res.status(401).json({ message: 'Invalid credentials.' });
     }
 
-    // Admin can always log in — they don't need isPulseApproved
-    if (user.role !== 'admin' && !user.isPulseApproved) {
+    // Admin + superadmin can always log in — they don't need isPulseApproved
+    const isPrivileged = user.role === 'admin' || user.role === 'superadmin';
+    if (!isPrivileged && !user.isPulseApproved) {
       return res.status(403).json({
         message: 'Access pending approval. Request access if you haven\'t already.',
         code: 'NOT_APPROVED',
