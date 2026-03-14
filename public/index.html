@@ -228,9 +228,21 @@
     #req-error.show, #req-success.show { display: block; }
 
     @media (max-width:800px) {
-      .shell { grid-template-columns:1fr; }
-      .panel-left { display:none; }
-      .panel-right { padding:48px 28px; }
+      .shell { grid-template-columns: 1fr; }
+      .panel-left { display: none; }
+      .panel-right { padding: 48px 24px 40px; }
+      .form-shell { max-width: 100%; }
+    }
+
+    @media (max-width:480px) {
+      .panel-right { padding: 36px 20px 36px; }
+      .secure-badge { font-size: 9.5px; padding: 4px 12px; }
+      .form-title { font-size: 22px; }
+      .security-tags { gap: 10px; flex-wrap: wrap; justify-content: center; }
+      .sec-tag { font-size: 9px; }
+      .field input { height: 42px; font-size: 12.5px; }
+      .btn-primary { height: 42px; font-size: 13px; }
+      .divider { margin: 20px 0 16px; }
     }
   </style>
 </head>

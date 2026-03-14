@@ -336,13 +336,59 @@
     @keyframes tIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
 
     @media (max-width:760px) {
+      /* Login screen */
       #screen-login { grid-template-columns: 1fr; }
       .login-left { display: none; }
-      .login-right { padding: 48px 28px; }
-      .stats-bar { grid-template-columns: repeat(2,1fr); }
+      .login-right { padding: 48px 24px 40px; }
+      .login-form-wrap { max-width: 100%; }
+
+      /* Panel navbar */
+      .navbar { padding: 0 14px; height: 48px; }
+      .nav-ctx { display: none; }
+      .nav-divider { display: none; }
+      .nav-badge { max-width: 140px; }
+      .nav-badge span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px; display: block; }
+      .btn-sm { padding: 5px 9px; }
+
+      /* Main */
+      .main { padding: 20px 14px 40px; }
+
+      /* Stats bar — 2 cols */
+      .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 24px; }
+      .stat-val { font-size: 22px; }
+
+      /* Table — card style on mobile */
       .table-head { display: none; }
-      .user-row { grid-template-columns: 1fr auto; }
-      .user-reason,.user-monitors { display: none; }
+      .user-table { border-radius: 10px; }
+      .user-row {
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        padding: 14px 16px;
+        gap: 8px;
+      }
+      .user-email { grid-column: 1; grid-row: 1; font-size: 11.5px; }
+      .row-actions { grid-column: 2; grid-row: 1 / 3; align-self: center; }
+      .user-row > span:nth-child(2) { grid-column: 1; grid-row: 2; }
+      .user-reason, .user-monitors { display: none; }
+
+      /* Tabs */
+      .tabs { gap: 4px; }
+      .tab { padding: 5px 10px; font-size: 10.5px; }
+
+      /* Buttons */
+      .btn-approve, .btn-revoke { padding: 5px 10px; font-size: 10px; }
+    }
+
+    @media (max-width:480px) {
+      .login-right { padding: 32px 18px; }
+      .admin-secure-badge { font-size: 9.5px; }
+      .lf-title { font-size: 22px; }
+      .field input { height: 42px; }
+      .btn-submit { height: 42px; font-size: 13px; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .stat { padding: 16px 14px; }
+      .stat-label { font-size: 9px; }
+      .stat-val { font-size: 20px; }
     }
   </style>
 </head>
